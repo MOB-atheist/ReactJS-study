@@ -1,0 +1,57 @@
+{
+  "name": "reactjs-study",
+  "version": "1.0.0",
+  "description": "Dedicated repository for my studies with reactjs framework and spa webpages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack",
+    "start": "webpack-dev-server --open --mode development",
+    "dev": "npm run webpack -- --mode development --watch",
+    "build": "npm run webpack -- --mode production"
+  },
+  "author": "pablo justino",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.2.1",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "nodemon": "^2.0.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0",
+    "vue-router": "^3.4.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.44.1",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MOB-atheist/ReactJS-study.git"
+  },
+  "keywords": [
+    "reactjs",
+    "node",
+    "server",
+    "spa",
+    "study",
+    "learning",
+    "website",
+    "javascript"
+  ],
+  "bugs": {
+    "url": "https://github.com/MOB-atheist/ReactJS-study/issues"
+  },
+  "homepage": "https://github.com/MOB-atheist/ReactJS-study#readme"
+}

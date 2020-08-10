@@ -1,0 +1,32 @@
+
+.push-enter-active .push-menu-button{
+    transition: opacity 5s;
+    opacity: 1;
+}
+
+.push-enter-active{
+    transition: height 1s;
+}
+
+.push-leave-active .push-menu-button{
+    transition: opacity 1s;
+    opacity: 0;
+}
+
+.push-leave-active{
+    transition: height 1s;
+}
+
+.push-leave-to,
+.push-enter{
+    height: 0;
+}
+
+.push-menu .push-enter,
+.push-menu .push-leave-to,
+.push-menu .push-leave-active,
+.push-menu .push-enter-active,
+.
+{
+    overflow-x: hidden;
+}

@@ -1,0 +1,62 @@
+body{
+    background-color: black;
+    margin: 0;
+    font-family: 'Annie Use Your Telescope', cursive;
+}
+
+button{
+    background-color: #0e0e0e;
+    border-color: transparent;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+    color: #5c0000;
+    font-size: 1rem;
+    font: inherit;
+}
+
+button:focus{
+    outline: transparent;
+}
+
+.nav-link{
+    margin: 5px 15px 0 15px;
+    background: black;
+    position: relative;
+    padding: 0 10px;
+}
+
+a,
+a:visited,
+a:active,
+a:hover{
+    color: white;
+    text-transform: unset;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    text-align: center;
+    left: 0;
+}
+
+.soon {
+    color: #5c0000;
+    font-size: 5rem;
+    text-align: center;
+    margin-top: calc( 50vh - 5rem);
+}
+
+
+.coal-header{
+    background-image:  url(src/katie-barrett-pqiDolxRL8o-unsplash.jpg);
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
