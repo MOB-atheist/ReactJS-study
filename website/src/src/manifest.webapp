@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "name": "ReactJS-study",
+  "description": "Dedicated repository for my studies with reactjs framework and spa webpages",
+  "icons": {
+    "60": "src/firefox_app_60x60.png",
+    "128": "src/firefox_app_128x128.png",
+    "512": "src/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": "pablo justino",
+    "url": null
+  }
+}

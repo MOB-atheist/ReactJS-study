@@ -1,15 +1,28 @@
-var path = require('path')
-var webpack = require('webpack')
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+var path = require('path');
+var webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
     entry: {
+      'loader': path.resolve(__dirname, 'assets/js/loader.js'),
       'css': path.resolve(__dirname, 'assets/css/main.scss'),
       'main': path.resolve(__dirname, 'assets/js/main.js'),
       'react': path.resolve(__dirname, 'assets/js/react/react.js')
     },
     output: {
       path: __dirname + '/website/src'
+    },
+    optimization: {
+      splitChunks: {
+        chunks: 'all',
+      },
+    },
+    watchOptions: {
+      aggregateTimeout: 200,
+      poll: 1000
     },
     module: {
       rules: [
@@ -47,7 +60,46 @@ module.exports = {
     performance: {
       hints: "warning"
     },
-    plugins: [],
+    plugins: [
+      new HtmlWebpackPlugin({
+        filename: '../index.html',
+        template: 'assets/index.html',
+        hash: true
+      }),
+      new FaviconsWebpackPlugin({
+        logo: './assets/favicon.png',
+        mode: 'webapp',
+        publicPath: 'src',
+        outputPath: 'src',
+        prefix: '',
+        dir: 'auto', 
+        inject: true,
+        cache: '.wwp-cache',
+        favicons:{
+          appName: 'ReactJS-study', 
+          appShortName: 'ReactJS-study',
+          display: "standalone",
+          icons: {
+            android: true,              // Create Android homescreen icon. `boolean` or `{ offset, background }`
+            appleIcon: true,            // Create Apple touch icons. `boolean` or `{ offset, background }`
+            appleStartup: true,         // Create Apple startup images. `boolean` or `{ offset, background }`
+            coast: true,                // Create Opera Coast icon. `boolean` or `{ offset, background }`
+            favicons: true,             // Create regular favicons. `boolean`
+            firefox: true,              // Create Firefox OS icons. `boolean` or `{ offset, background }`
+            windows: true,              // Create Windows 8 tile icons. `boolean` or `{ background }`
+            yandex: true                // Create Yandex browser icon. `boolean` or `{ background }`
+          }
+        }
+      }),
+      new ScriptExtHtmlWebpackPlugin({
+        sync: 'loader.js',
+        defaultAttribute: 'defer'
+      }),
+      new PreloadWebpackPlugin({
+        rel: 'preload',
+        include: ['loader']
+      })
+    ],
     devtool: '#eval-source-map'
   }
   
