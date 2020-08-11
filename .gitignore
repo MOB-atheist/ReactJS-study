@@ -112,11 +112,9 @@ dist
 **/*.backup.*
 **/*.back.*
 
-node_modules
 
 *.sublime*
 
 psd
 thumb
 sketch
-.wwp-cache
