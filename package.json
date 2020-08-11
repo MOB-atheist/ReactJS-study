@@ -36,7 +36,8 @@
     "vue-router": "^3.4.2",
     "vue-template-compiler": "^2.6.11",
     "webpack": "^4.44.1",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "yarn": "^1.22.4"
   },
   "devDependencies": {
     "preload-webpack-plugin": "^3.0.0-beta.3",
