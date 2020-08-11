@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://dwglogo.com/wp-content/uploads/2017/09/1460px-React_logo.png" alt="Project logo"></a>
+ <img width=200px height=auto src="https://dwglogo.com/wp-content/uploads/2017/09/1460px-React_logo.png" alt="Project logo"></a>
 
 </p>
 
