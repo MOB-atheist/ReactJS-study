@@ -13,7 +13,7 @@ module.exports = {
       'react': path.resolve(__dirname, 'assets/js/react/react.js')
     },
     output: {
-      path: __dirname + '/website/src'
+      path: __dirname + '/public/src'
     },
     optimization: {
       splitChunks: {
@@ -52,10 +52,10 @@ module.exports = {
       ]
     },
     devServer: {
-      contentBase: path.join(__dirname, '/'),
+      contentBase: path.join(__dirname, '/public'),
       host: 'localhost',
       compress: true,
-      port: 9000
+      port: 80
     },
     performance: {
       hints: "warning"
@@ -80,14 +80,14 @@ module.exports = {
           appShortName: 'ReactJS-study',
           display: "standalone",
           icons: {
-            android: true,              // Create Android homescreen icon. `boolean` or `{ offset, background }`
-            appleIcon: true,            // Create Apple touch icons. `boolean` or `{ offset, background }`
-            appleStartup: true,         // Create Apple startup images. `boolean` or `{ offset, background }`
-            coast: true,                // Create Opera Coast icon. `boolean` or `{ offset, background }`
-            favicons: true,             // Create regular favicons. `boolean`
-            firefox: true,              // Create Firefox OS icons. `boolean` or `{ offset, background }`
-            windows: true,              // Create Windows 8 tile icons. `boolean` or `{ background }`
-            yandex: true                // Create Yandex browser icon. `boolean` or `{ background }`
+            android: true,
+            appleIcon: true,
+            appleStartup: true,
+            coast: true,
+            favicons: true,
+            firefox: true,
+            windows: true,
+            yandex: true
           }
         }
       }),
