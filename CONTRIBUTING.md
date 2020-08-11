@@ -35,6 +35,5 @@
     ````
 - Make a pull request
   - Make sure you send the PR to the <code>fooBar</code> branch
-  - Travis CI is watching you!
 
 If you follow these instructions, your PR will land pretty safely in the main repo!
