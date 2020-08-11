@@ -15,7 +15,7 @@
 
 ---
 
-<p align="center">Here well have some examples using ReactJs features, like components, also there is going to be napplied some advanced techniques with webpacker and packages management.
+<p align="center">Here well have some examples using ReactJs features, like components, also there is going to be applied some advanced techniques with webpacker and packages management.
 
 The React script doesn't have much to it right now, because i am building a very complete and reliable wepacker configuration, togheter with a npm package configuration that suits most uses.
 
