@@ -30,8 +30,8 @@ The project Can be reused for many purposes, as it creates a very complete html 
 - [Usage](#usage)
 - [Deployment](#deployment)
 - [Dependencies](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
+- [TODO](TODO.md)
+- [Contributing](CONTRIBUTING.md)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
