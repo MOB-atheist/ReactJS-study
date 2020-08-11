@@ -1,11 +1,11 @@
 var React = require('react');
 import ReactDOM from "react-dom";
-import Form from './components/form'
+import { FrontPage } from './components/appComponents'
 
 function App(){
     return (
         <div>
-            <h1>Bem vindo</h1>
+            <FrontPage></FrontPage>
         </div>
     );
 }

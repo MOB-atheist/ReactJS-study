@@ -4,20 +4,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
       'loader': path.resolve(__dirname, 'loader.js'),
       'all': path.resolve(__dirname, 'assets/all.js')
-      // 'loader': path.resolve(__dirname, 'assets/js/loader.js'),
-      // 'css': path.resolve(__dirname, 'assets/css/main.scss'),
-      // 'main': path.resolve(__dirname, 'assets/js/main.js'),
-      // 'react': path.resolve(__dirname, 'assets/js/react/react.js')
     },
     output: {
-      path: __dirname + 'public/src',
-      publicPath: 'public/src',
+      path: __dirname + '/public/src'
     },
     optimization: {
       splitChunks: {
@@ -56,7 +50,7 @@ module.exports = {
       ]
     },
     devServer: {
-      contentBase: [path.join(__dirname, 'public'), path.join(__dirname, 'public/src')],
+      contentBase: [ path.join(__dirname, 'public'), path.join(__dirname, 'public/src') ],
       host: 'localhost',
       compress: true,
       port: 9000
@@ -65,6 +59,7 @@ module.exports = {
       hints: "warning"
     },
     plugins: [
+      new webpack.ProgressPlugin(),
       new HtmlWebpackPlugin({
         filename: '../index.html',
         template: 'assets/index.html',
@@ -102,11 +97,6 @@ module.exports = {
       new PreloadWebpackPlugin({
         rel: 'preload',
         include: ['loader']
-      }),
-      new CleanWebpackPlugin({
-        dry: true,
-        verbose: true,
-        cleanStaleWebpackAssets: false
       })
     ],
     devtool: '#eval-source-map'
