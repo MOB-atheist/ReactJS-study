@@ -30,6 +30,8 @@ Or you can use the production command.
 npm run build
 ```
 
+If any of those commands throw a permission error, start the command line with administrator privileges or sudo if youre using a linux based system.
+
 To start the webpack-dev-server for development envyroment.
 
 ```bash
