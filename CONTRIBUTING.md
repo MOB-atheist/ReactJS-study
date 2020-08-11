@@ -9,7 +9,7 @@
 ## Submitting changes
 
 - Fork the repo
-  - <https://github.com/kylelobo/The-Documentation-Compendium/fork>
+  - <https://github.com/MOB-atheist/ReactJS-study/fork>
 - Check out a new branch based and name it to what you intend to do:
   - Example:
     ````
