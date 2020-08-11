@@ -3,17 +3,21 @@ var webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
-      'loader': path.resolve(__dirname, 'assets/js/loader.js'),
-      'css': path.resolve(__dirname, 'assets/css/main.scss'),
-      'main': path.resolve(__dirname, 'assets/js/main.js'),
-      'react': path.resolve(__dirname, 'assets/js/react/react.js')
+      'loader': path.resolve(__dirname, 'loader.js'),
+      'all': path.resolve(__dirname, 'assets/all.js')
+      // 'loader': path.resolve(__dirname, 'assets/js/loader.js'),
+      // 'css': path.resolve(__dirname, 'assets/css/main.scss'),
+      // 'main': path.resolve(__dirname, 'assets/js/main.js'),
+      // 'react': path.resolve(__dirname, 'assets/js/react/react.js')
     },
     output: {
-      path: __dirname + '/public/src'
+      path: __dirname + 'public/src',
+      publicPath: 'public/src',
     },
     optimization: {
       splitChunks: {
@@ -52,7 +56,7 @@ module.exports = {
       ]
     },
     devServer: {
-      contentBase: path.join(__dirname, '/public'),
+      contentBase: [path.join(__dirname, 'public'), path.join(__dirname, 'public/src')],
       host: 'localhost',
       compress: true,
       port: 9000
@@ -69,8 +73,8 @@ module.exports = {
       new FaviconsWebpackPlugin({
         logo: './assets/favicon.png',
         mode: 'webapp',
-        publicPath: 'src',
-        outputPath: 'src',
+        publicPath: '',
+        outputPath: '',
         prefix: '',
         dir: 'auto', 
         inject: true,
@@ -92,12 +96,17 @@ module.exports = {
         }
       }),
       new ScriptExtHtmlWebpackPlugin({
-        sync: 'loader.js',
+        sync: 'src/loader.js',
         defaultAttribute: 'defer'
       }),
       new PreloadWebpackPlugin({
         rel: 'preload',
         include: ['loader']
+      }),
+      new CleanWebpackPlugin({
+        dry: true,
+        verbose: true,
+        cleanStaleWebpackAssets: false
       })
     ],
     devtool: '#eval-source-map'
