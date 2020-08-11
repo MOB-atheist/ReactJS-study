@@ -158,7 +158,7 @@ npm run build
 ## ✍️ Authors <a name = "authors"></a>
 - [@MOB-atheist](https://github.com/MOB-atheist) - Idea & Initial work
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/MOB-atheist/ReactJS-study/contributors) who participated in this project.
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 - Hat tip to anyone whose code was used
