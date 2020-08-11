@@ -11,7 +11,7 @@ Content:
 + css /
 
 #### js
-As the name implies, here is where all the javascript fonts and javascript frameworks reside. When you want to make changes, please minify the javascript and then upload.
+As the name implies, here is where all the javascript fonts and javascript frameworks reside.
 
 #### css
-Similar to js, here are the minified css files.
+Similar to js, here are the css files.
