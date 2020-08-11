@@ -55,7 +55,7 @@ module.exports = {
       contentBase: path.join(__dirname, '/public'),
       host: 'localhost',
       compress: true,
-      port: 80
+      port: 9000
     },
     performance: {
       hints: "warning"
