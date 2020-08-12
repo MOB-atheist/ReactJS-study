@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-function FrontPage(){
+const FrontPage = ({nome})=>{
   return (
     <div>
-      HELLO 
+      HELLO {nome}
     </div>
   );
 }
