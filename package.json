@@ -22,6 +22,7 @@
     "css-loader": "^4.2.1",
     "favicons-webpack-plugin": "^4.2.0",
     "file-loader": "^6.0.0",
+    "history": "^1.17.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
     "nodemon": "^2.0.4",
