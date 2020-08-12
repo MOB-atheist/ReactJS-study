@@ -19,7 +19,7 @@
 
 The React script doesn't have much to it right now, because i am building a very complete and reliable wepacker configuration, togheter with a npm package configuration that suits most uses.
 
-The project Can be reused for many purposes, as it creates a very complete html file, including favicons compatibility with most browsers and many other features like defer and async to allow for a very good SEO experience
+The project Can be reused for many purposes, as it generates a html file, with features like defer and async to allow for a very good SEO experience, improvements will be made with time.
     <br> 
 </p>
 
@@ -73,8 +73,6 @@ After all is done, start the webpacker file wacther using the command.
 npm run dev
 
 ```
-
-This may take some time as favicon generator will create a cache file and all favicons files.
 
 Or you can use the production command.
 
