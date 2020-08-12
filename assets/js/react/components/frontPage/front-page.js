@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const FrontPage = function(){
+function FrontPage(){
   return (
     <div>
       HELLO 

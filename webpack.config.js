@@ -3,24 +3,14 @@ var webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
     entry: {
-      'loader': path.resolve(__dirname, 'loader.js'),
+      'loader': path.resolve(__dirname, 'assets/js/loader.js'),
       'all': path.resolve(__dirname, 'assets/all.js')
     },
     output: {
       path: __dirname + '/public/src'
-    },
-    optimization: {
-      splitChunks: {
-        chunks: 'all',
-      },
-    },
-    watchOptions: {
-      aggregateTimeout: 200,
-      poll: 1000
     },
     module: {
       rules: [
@@ -53,42 +43,17 @@ module.exports = {
       contentBase: [ path.join(__dirname, 'public'), path.join(__dirname, 'public/src') ],
       host: 'localhost',
       compress: true,
+      open: true,
       port: 9000
     },
     performance: {
       hints: "warning"
     },
     plugins: [
-      new webpack.ProgressPlugin(),
       new HtmlWebpackPlugin({
         filename: '../index.html',
         template: 'assets/index.html',
         hash: true
-      }),
-      new FaviconsWebpackPlugin({
-        logo: './assets/favicon.png',
-        mode: 'webapp',
-        publicPath: '',
-        outputPath: '',
-        prefix: '',
-        dir: 'auto', 
-        inject: true,
-        cache: '.wwp-cache',
-        favicons:{
-          appName: 'ReactJS-study', 
-          appShortName: 'ReactJS-study',
-          display: "standalone",
-          icons: {
-            android: true,
-            appleIcon: true,
-            appleStartup: true,
-            coast: true,
-            favicons: true,
-            firefox: true,
-            windows: true,
-            yandex: true
-          }
-        }
       }),
       new ScriptExtHtmlWebpackPlugin({
         sync: 'src/loader.js',
