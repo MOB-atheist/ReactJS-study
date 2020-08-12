@@ -1,40 +1,22 @@
 var React = require('react');
 import ReactDOM from "react-dom";
-import { FrontPage } from './components/appComponents'
+import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 
-class ErrorBoundary extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { hasError: false };
-    }
-
-    static getDerivedStateFromError(error) {
-        // Update state so the next render will show the fallback UI.
-        return { hasError: true };
-    }
-
-    componentDidCatch(error, errorInfo) {
-        // You can also log the error to an error reporting service
-        logErrorToMyService(error, errorInfo);
-    }
-
-    render() {
-        if (this.state.hasError) {
-        // You can render any custom fallback UI
-        return <h1>Something went wrong.</h1>;
-        }
-
-        return this.props.children; 
-    }
-}
+// Components //
+import FrontPage from './components/frontPage/front-page'
+import Navbar from './components/navbar/navbar'
 
 function App(){
     return (
         <div>
+            <Navbar></Navbar>
+            <FrontPage nome="PABLO"></FrontPage>
         </div>
     );
 }
-  export default App;
-  
-  const wrapper = document.getElementById("container");
-  wrapper ? ReactDOM.render(<App />, wrapper) : false;
+export default App;
+
+const wrapper = document.getElementById("container");
+wrapper ? ReactDOM.render(<App />, wrapper) : false;
+
+// console.log('react.js');
