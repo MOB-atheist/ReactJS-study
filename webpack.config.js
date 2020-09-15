@@ -3,26 +3,19 @@ var webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
       'loader': path.resolve(__dirname, 'assets/js/loader.js'),
+      'bootstrap': 'bootstrap',
       'css': path.resolve(__dirname, 'assets/css/main.scss'),
-      'main': path.resolve(__dirname, 'assets/js/main.js'),
-      'react': path.resolve(__dirname, 'assets/js/react/react.js')
+      'react': path.resolve(__dirname, 'assets/js/react/react.js'),
+      'main': path.resolve(__dirname, 'assets/js/main.js')
     },
     output: {
-      path: __dirname + '/public/src'
-    },
-    optimization: {
-      splitChunks: {
-        chunks: 'all',
-      },
-    },
-    watchOptions: {
-      aggregateTimeout: 200,
-      poll: 1000
+      path: __dirname + '/public/src',
+      publicPath: 'src/'
     },
     module: {
       rules: [
@@ -52,52 +45,21 @@ module.exports = {
       ]
     },
     devServer: {
-      contentBase: path.join(__dirname, '/public'),
+      contentBase: path.join(__dirname, 'public'),
       host: 'localhost',
       compress: true,
-      port: 80
-    },
-    performance: {
-      hints: "warning"
+      port: 9000
     },
     plugins: [
+      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         filename: '../index.html',
         template: 'assets/index.html',
         hash: true
       }),
-      new FaviconsWebpackPlugin({
-        logo: './assets/favicon.png',
-        mode: 'webapp',
-        publicPath: 'src',
-        outputPath: 'src',
-        prefix: '',
-        dir: 'auto', 
-        inject: true,
-        cache: '.wwp-cache',
-        favicons:{
-          appName: 'ReactJS-study', 
-          appShortName: 'ReactJS-study',
-          display: "standalone",
-          icons: {
-            android: true,
-            appleIcon: true,
-            appleStartup: true,
-            coast: true,
-            favicons: true,
-            firefox: true,
-            windows: true,
-            yandex: true
-          }
-        }
-      }),
       new ScriptExtHtmlWebpackPlugin({
-        sync: 'loader.js',
-        defaultAttribute: 'defer'
-      }),
-      new PreloadWebpackPlugin({
-        rel: 'preload',
-        include: ['loader']
+        preload: 'loader',
+        defaultAttribute: 'async'
       })
     ],
     devtool: '#eval-source-map'

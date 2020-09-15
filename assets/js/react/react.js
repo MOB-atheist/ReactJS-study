@@ -1,15 +1,22 @@
 var React = require('react');
 import ReactDOM from "react-dom";
-import Form from './components/form'
+import { Router, Route, IndexRoute, hashHistory } from 'react-router'
+
+// Components //
+import FrontPage from './components/frontPage/front-page'
+import Navbar from './components/navbar/navbar'
 
 function App(){
     return (
         <div>
-            <h1>Bem vindo</h1>
+            <Navbar></Navbar>
+            <FrontPage nome="PABLO"></FrontPage>
         </div>
     );
 }
-  export default App;
-  
-  const wrapper = document.getElementById("container");
-  wrapper ? ReactDOM.render(<App />, wrapper) : false;
+export default App;
+
+const wrapper = document.getElementById("container");
+wrapper ? ReactDOM.render(<App />, wrapper) : false;
+
+// console.log('react.js');

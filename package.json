@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack",
     "start": "webpack-dev-server --open --mode development",
+    "webpack": "webpack",
     "dev": "npm run webpack -- --mode development --watch",
     "build": "npm run webpack -- --mode production"
   },
@@ -18,11 +18,21 @@
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
     "bootstrap": "^5.0.0-alpha1",
+<<<<<<< HEAD
     "css-loader": "^4.3.0",
     "favicons-webpack-plugin": "^4.2.0",
     "file-loader": "^6.1.0",
     "html-loader": "^1.3.0",
     "html-webpack-plugin": "^4.4.1",
+=======
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^4.2.1",
+    "favicons-webpack-plugin": "^4.2.0",
+    "file-loader": "^6.0.0",
+    "history": "^1.17.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+>>>>>>> c7ec88beab6a7049418b2966d2f040b50e12012f
     "nodemon": "^2.0.4",
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
@@ -34,12 +44,24 @@
     "style-loader": "^1.2.1",
     "url-loader": "^4.1.0",
     "vue-router": "^3.4.3",
+<<<<<<< HEAD
     "vue-template-compiler": "^2.6.12",
+=======
+    "vue-template-compiler": "^2.6.11",
+>>>>>>> c7ec88beab6a7049418b2966d2f040b50e12012f
     "webpack": "^4.44.1",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "yarn": "^1.22.4"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "preload-webpack-plugin": "^3.0.0-beta.4",
+=======
+    "babel-jest": "^26.3.0",
+    "jest": "^26.3.0",
+    "preload-webpack-plugin": "^3.0.0-beta.4",
+    "react-test-renderer": "^16.13.1",
+>>>>>>> c7ec88beab6a7049418b2966d2f040b50e12012f
     "webpack-cli": "^3.3.12"
   },
   "repository": {
